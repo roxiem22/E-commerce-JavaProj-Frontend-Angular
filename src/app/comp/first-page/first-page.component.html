@@ -1,0 +1,56 @@
+<div class="topnav"><mat-button-toggle (click)="refresh()">Refresh</mat-button-toggle>
+  <input type="text" id="bar" name="bar" placeholder="Search..">
+</div>
+<button (click)="search()" style="float: right">Search</button>
+<button (click)="goBack()" >Back</button>
+<a href="http://localhost:4200/login" (click)="this.auth.logout();logOut()">Logout</a>
+<div class="center-container">
+  <div class="display-block">
+    <mat-button-toggle (click)="chat()" style="float: right">Chat With Us</mat-button-toggle>
+    <div [style]="'display:flex'">
+      <mat-list>
+        <div mat-subheader>List of categories
+          <div class="form-group">
+            <select class="form-control" (click)="submit()" [(ngModel)]="categList" name="categ">
+              <option *ngFor="let C of categList" value="{{C.name}}" (click)="func(C.id)">{{C.name}}
+              </option>
+            </select>
+            <button (click)="func1()">Go</button>
+          </div>
+        </div>
+        <div mat-subheader>Sort By Price
+          <div class="form-group">
+            <select class="form-control">
+              <option (click)="getSortA()">{{priceA}}
+              </option>
+              <option (click)="getSortD()">{{priceD}}
+              </option>
+            </select>
+          </div>
+          </div>
+      </mat-list>
+    </div>
+    <h1 style="text-align:center;color: crimson">Roxie's Online Shop</h1>
+    <mat-button-toggle (click)="cart();toCart()" style="float: right;">My Cart</mat-button-toggle>
+    <mat-button-toggle (click)="wishlist();toWishlist()" style="float: right;">Wishlist</mat-button-toggle>
+  </div>
+
+<div class="center-container">
+  <div class="display-block">
+    <div [style]="'display:flex'">
+      <mat-list>
+        <div mat-subheader>List of products</div>
+        <div class="row">
+          <div class="column" (click)="submit1()" *ngFor="let item of prodList">
+            <mat-button-toggle (click)="addToCart(item)">Add to Cart</mat-button-toggle>
+            <mat-button-toggle (click)="addToWishlist(item)">Add to Fav</mat-button-toggle>
+          <p>{{item.name}}</p>
+          <p>{{item.price}} RON</p>
+          <img src="./assets/{{item.imgUrl}}" width="250" height="250">
+        </div>
+        </div>
+      </mat-list>
+    </div>
+  </div>
+</div>
+</div>

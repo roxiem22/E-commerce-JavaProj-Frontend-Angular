@@ -1,0 +1,21 @@
+<a href="http://localhost:4200/login" (click)="this.auth.logout();logOut()">Logout</a>
+<div class="center-container">
+  <div class="display-block">
+    <div [style]="'display:flex'">
+      <mat-list>
+        <div mat-subheader style="color: crimson">Order Details:</div>
+        <div class="">
+          <div class="" (click)="show()">
+            <div style="font-size: large">   Cart Id: {{orderL.cart?.id}}</div>
+            <div style="font-size: large">   Nume: {{orderL.name}}</div>
+            <div style="font-size: large">   Email: {{orderL.email}}</div>
+            <div style="font-size: large">   Zip: {{orderL.zip}}</div>
+            <div style="font-size: large">   State: {{orderL.state}}</div>
+            <div style="font-size: large">   City: {{orderL.city}}</div>
+            <div style="font-size: large">   Address: {{orderL.address}}</div>
+          </div>
+        </div>
+      </mat-list>
+    </div>
+  </div>
+</div>

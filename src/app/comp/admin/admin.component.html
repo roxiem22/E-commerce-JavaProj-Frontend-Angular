@@ -1,0 +1,68 @@
+<button (click)="export()">Export</button>
+<div class="display-block">
+  <div [style]="'display:flex'">
+    <mat-list>
+      <div class="column">
+      <div style="color:darkslateblue;font-size:140%;" mat-subheader>List of products</div>
+        <div class="row" *ngFor="let item of productsList">
+          <p>{{item.name}}</p>
+          <button (click)="delete1(item)">delete</button>
+          <button (click)="produp.id=item.id;update1(produp)">update</button>
+      </div>
+      </div>
+      <div class="column">
+      <div style="color:darkslateblue;font-size:140%;" mat-subheader>List of categories </div>
+      <div class="row" *ngFor="let item of categList">
+        <p>{{item.name}}</p>
+        <button (click)="delete(item)">delete</button>
+        <button (click)="categup.id=item.id;update(categup)">update</button>
+      </div>
+      </div>
+      <div class="column">
+      <div style="color:darkslateblue;font-size:140%;" mat-subheader>List of users </div>
+      <div class="row" *ngFor="let item of userList">
+        <p>{{item.name}}</p>
+        <button (click)="delete2(item)">delete</button>
+        <button (click)="userup.id=item.id;update2(userup)">update</button>
+      </div>
+      </div>
+      <div class="column">
+      <ng-form>
+        <div style="font-size: 140%;color: crimson;">User Update Form:</div>
+        <label for="fname">   User name:</label><br>
+        <input type="text" id="fname" name="fname" [(ngModel)]= "userup.name"><br>
+        <label for="mail">Mail address:</label><br>
+        <input type="text" id="mail" name="mail" [(ngModel)]= "userup.mail">
+        <label for="pass">Password:</label><br>
+        <input type="text" id="pass" name="pass" [(ngModel)]= "userup.password">
+        <label for="auth">Auth:</label><br>
+        <input type="text" id="auth" name="auth" [(ngModel)]= "userup.auth">
+        <button (click)="validateUserForm();adduser()">Add User</button>
+      </ng-form>
+
+      <ng-form>
+        <div style="font-size: 140%;color: crimson;">Category Update Form:</div>
+      <div></div>
+        <div class="row">
+        <label for="name">Category name:</label><br>
+        <input type="text" id="name" name="name" [(ngModel)]= "categup.name"><br>
+          <button (click)="validateCategForm();addcategory()">Add Category</button>
+        </div>
+      </ng-form>
+
+      <ng-form>
+        <div style="font-size: 140%;color: crimson;">Product Update Form:</div>
+        <label for="cname">Product name:</label><br>
+        <input type="text" id="cname" name="cname" [(ngModel)]= "produp.name"><br>
+        <label for="price">Price:</label><br>
+        <input type="text" id="price" name="price" [(ngModel)]= "produp.price"><br>
+        <label for="descr">Description:</label><br>
+        <input type="text" id="descr" name="descr" [(ngModel)]= "produp.description"><br>
+        <label for="categ">Category_Id:</label><br>
+        <input type="text" id="categ" name="categ" [(ngModel)]= "produp.category_id"><br>
+        <button (click)="validateProdForm();addproduct()">Add Product</button>
+      </ng-form>
+      </div>
+    </mat-list>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="center-container">
+  <button (click)="goBack()">Back</button>
+  <mat-button-toggle style="float: right" (click)="refresh()">Refresh</mat-button-toggle>
+  <a href="http://localhost:4200/login" (click)="this.auth.logout();logOut()">Logout</a>
+  <div class="display-block">
+    <div [style]="'display:flex'">
+      <mat-list>
+        <div mat-subheader style="color: crimson">List of products from your wishlist:</div>
+        <div class="row">
+          <div class="column" *ngFor="let item of productList">
+            <button (click)="deleteProd(item)">Delete form wishlist</button>
+            <button (click)="cartProd(item)">Add to cart</button>
+            <p>{{item.name}}</p>
+            <p>{{item.price}} RON</p>
+            <img src="./assets/{{item.imgUrl}}" width="250" height="250">
+          </div>
+        </div>
+      </mat-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.column {
+  float: left;
+  width: 20.33%;
+  padding: 20px;
+
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column1 {
+  float: left;
+  width: 20.33%;
+  padding: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
